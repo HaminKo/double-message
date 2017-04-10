@@ -1,0 +1,37 @@
+<div class="container-fluid col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
+
+<form method="post">
+
+  <div class="form-group col-xs-12">
+    <label>Text Message</label>
+    <textarea class="form-control" rows="6" name="newMessageContent"></textarea>
+  </div>
+
+  <div class="form-group col-xs-12">
+    <label class="radio-inline">
+      <input type="radio" name="newMessageChannel" value="sms">SMS
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="newMessageChannel" value="email">Email
+    </label>
+  </div>
+
+<div class="form-group col-xs-12">
+  <button type="submit" class="btn btn-default col-xs-12">Send {{contact.name}} Message {{contact.phone}}</button>
+</div>
+
+  <div class="form-group collapse col-xs-12" id="scheduleMessageTimeInput">
+    <label>Time</label>
+    <input type="datetime-local" class="form-control" placeHolder="Time: (MM-DD-YYY-HH-MM)" name="scheduleMessageTimeInput">
+  </div>
+
+  <div class="form-group col-xs-12">
+  <a class="btn btn-default col-xs-12 scheduleMessageToggle" name="scheduleMessageToggle">Schedule Message For Later</a>
+</div>
+</form>
+
+<div class="form-group col-xs-12">
+<a class="btn btn-primary col-xs-12" href="/contacts">Go back to contacts</a>
+</div>
+
+</div>
