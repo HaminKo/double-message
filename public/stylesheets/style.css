@@ -1,10 +1,13 @@
 body {
   /*overflow: hidden;*/
-  margin: 0;
-  padding: 3.5%;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  margin-top: 94px;
+  padding: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  font-size: 1em;
-  color: white;
+  font-size: 14px;
+  /*color: white;*/
 }
 
 a {
@@ -13,6 +16,47 @@ a {
 
 hr {
   width: 100%;
+}
+
+.parent {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner {
+  width: 100%
+}
+
+.navbar-default {
+    border-color: #ddd;
+    border-top: solid 6px #34495e;
+    padding: 8px 0px;
+}
+
+.panel-default > .panel-heading {
+    color: #fff;
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 10px;
+    padding: 0 15px;
+    background-color: #34495e;
+    border-color: #ddd;
+    border-bottom: 1px solid transparent;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    font-size: 1.2em;
+}
+
+.btn {
+    border-radius: 2px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #3097D1;
+    border-color: #2a88bd;
 }
 
 .bg-wrapper {
@@ -34,8 +78,8 @@ hr {
 }
 
 .frontaction {
-  text-overflow: ellipsis;
-  overflow: hidden;
+  /*text-overflow: ellipsis;
+  overflow: hidden;*/
 }
 
 .sendMessage {

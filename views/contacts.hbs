@@ -2,6 +2,7 @@
 
 <table class="table table-striped">
   <thead>
+    <td></td>
     <td><b>Name</b></td>
     <td><b>Phone</b></td>
     <td><b>Email</b></td>
@@ -10,6 +11,7 @@
   <tbody>
   {{#each contact}}
   <tr>
+    <td><input type="checkbox" name="{{_id}}"></td>
     <td>{{name}}</td>
     <td>{{phone}}</td>
     <td>{{email}}</td>
@@ -24,3 +26,5 @@
 <a class="btn btn-primary" href='/contacts/new'>Add Contact</a>
 
 <a class="btn btn-primary" href='/logout'>Logout</a>
+
+<button class="btn btn-primary" href=''>Send a group message</button>
