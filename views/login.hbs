@@ -1,28 +1,34 @@
-<div class="bg-wrapper">
+<div class="container">
 
-<div class="mainContainer container-fluid col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
+  <div class="row">
 
-  <form method="post">
-    <div class="form-group col-xs-12 frontaction">
-      <label>Username</label>
-      <input type="text" class="form-control" name="username" placeholder="Username" value="{{contact.name}}">
+    {{#if error}}
+    <div class="alert alert-danger" role="alert">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+      <span class="sr-only">Error:</span>
+      {{error}}
     </div>
-    <div class="form-group col-xs-12 frontaction">
-      <label>Password</label>
-      <input type="password" class="form-control" name="password" placeholder="Password" value="{{contact.phone}}">
-    </div>
-    <div class="form-group col-xs-6">
-      <button type="submit" class="btn btn-primary col-xs-12 frontaction">Login</button>
-    </div>
-  </form>
+    {{/if}}
 
-  <div class="form-group col-xs-6">
-    <a class="btn btn-primary col-xs-12 frontaction" href='/auth/facebook'>Login with Facebook</a>
+    <div class="inner">
+      <form method="post" style="max-width: 300px; margin: auto; border: 0.5px solid gray; padding: 30px 30px 30px 30px">
+        <div class="form-group frontaction">
+          <label>Username</label>
+          <input type="text" class="form-control" name="username" placeholder="Username" value="{{contact.name}}">
+        </div>
+        <div class="form-group frontaction">
+          <label>Password</label>
+          <input type="password" class="form-control" name="password" placeholder="Password" value="{{contact.phone}}">
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary col-xs-12">Login</button>
+          <a class="btn btn-primary col-xs-12" href='/auth/facebook'>Login with Facebook</a>
+          <a class="btn btn-primary col-xs-12" href='/signup'>Register Here</a>
+        </div>
+      </form>
+
+    </div>
+
   </div>
-
-  <div class="form-group col-xs-12">
-    <a class="btn btn-primary col-xs-12 frontaction" href='/signup'>Register Here</a>
-  </div>
-</div>
 
 </div>

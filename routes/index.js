@@ -331,6 +331,10 @@ router.post('/messages/send/:contactId', function(req, res) {
   });
 });
 
+router.get('/about', function(req, res) {
+  res.render('about')
+});
+
 var sendEmailFunction = function(fromEmail, toEmail, emailContent) {
   var helper = require('sendgrid').mail;
   var from_email = new helper.Email(fromEmail);
