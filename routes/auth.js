@@ -7,7 +7,7 @@ module.exports = function(passport) {
   // Add Passport-related auth routes here, to the router!
   // YOUR CODE HERE
   router.get('/', function(req, res) {
-    if (req.user) {
+    if (!req.user) {
       res.redirect('/login')
     } else {
       res.render('contacts')
