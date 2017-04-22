@@ -2,7 +2,7 @@
 Personal relationship manager app allowing shared inbox for texting and emailing. Includes a delayed message feature.
 
 Demo link:
-https://double-message-demo.herokuapp.com/login
+https://double-message-demo.herokuapp.com
 
 After you register, add yourself as a contact and try sending yourself a message!
 
