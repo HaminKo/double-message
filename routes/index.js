@@ -68,6 +68,18 @@ router.post('/messages/receive', function(req, res) {
 //   });
 // });
 
+/* GET home page. */
+router.use(function(req, res, next) {
+  if (!req.user) {
+    res.redirect('/login')
+  } else {
+    next();
+  }
+});
+
+//////////////////////////////// PRIVATE ROUTES ////////////////////////////////
+// Only logged in users can see these routes
+
 router.get('/messages/sendScheduled', function(req, res) {
   Message.find({status: 'scheduled'}, function(err, message) {
     if (err) { res.status(500).send(err) }
@@ -118,15 +130,6 @@ router.get('/messages/sendScheduled', function(req, res) {
       });
     });
   });
-});
-
-/* GET home page. */
-router.use(function(req, res, next) {
-  if (!req.user) {
-    res.redirect('/login')
-  } else {
-    next();
-  }
 });
 
 router.get('/contacts', function(req, res, next) {
