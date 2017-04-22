@@ -1,34 +1,59 @@
-<div class="bg-wrapper">
+<div class="row">
 
-  <div class="mainContainer container-fluid col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
+  <div class="col-md-8 col-md-offset-2">
 
-    <form method="post">
-      <div class="form-group col-xs-12 frontaction">
-        <label>Username</label>
-        <input type="text" class="form-control" name="signupUsername" placeholder="Username" value="{{contact.name}}">
-      </div>
-      <div class="form-group col-xs-12 frontactionp">
-        <label>Phone Number</label>
-        <input type="text" class="form-control" name="signupPhone" placeholder="Phone Number" value="{{contact.name}}">
-      </div>
-      <div class="form-group col-xs-12 frontaction">
-        <label>Password</label>
-        <input type="password" class="form-control" name="signupPassword" placeholder="Password" value="{{contact.phone}}">
-      </div>
-      <div class="form-group col-xs-12 frontaction">
-        <label>Confirm Password</label>
-        <input type="password" class="form-control" name="signupPasswordConfirm" placeholder="Confirm password" value="{{contact.phone}}">
+    <div class="panel panel-default">
+      <div class="panel-heading">Login</div>
+      <div class="panel-body">
+
+        {{#if error}}
+        <div class="alert alert-danger" role="alert">
+          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+          <span class="sr-only">Error:</span>
+          {{error}}
+        </div>
+        {{/if}}
+
+        <div class="inner">
+
+          <form class="form-horizontal"method="post">
+            <div class="col-md-10 col-md-offset-1">
+              <div class="form-group">
+                <label>Username</label>
+                <input type="text" class="form-control" name="signupUsername" placeholder="Username" value="{{contact.name}}">
+              </div>
+            </div>
+            <div class="col-md-10 col-md-offset-1">
+              <div class="form-group">
+                <label>Phone Number</label>
+                <input type="text" class="form-control" name="signupPhone" placeholder="Phone Number" value="{{contact.name}}">
+              </div>
+            </div>
+            <div class="col-md-10 col-md-offset-1">
+              <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" name="signupPassword" placeholder="Password" value="{{contact.phone}}">
+              </div>
+            </div>
+            <div class="col-md-10 col-md-offset-1">
+              <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="password" class="form-control" name="signupPasswordConfirm" placeholder="Confirm password" value="{{contact.phone}}">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-10 col-md-offset-1" style="text-align:center">
+                <button type="submit" class="btn btn-primary">Register</button>
+                <a class="btn btn-primary" href='/contacts/new'>Go back to Login</a>
+              </div>
+            </div>
+          </form>
+        </div>
+
       </div>
 
-      <div class="form-group col-xs-12">
-        <button type="submit" class="btn btn-primary col-xs-12 frontaction">Register</button>
-      </div>
-
-      <div class="form-group col-xs-12">
-        <a class="btn btn-primary col-xs-12 frontaction" href='/contacts/new'>Go back to Login</a>
-      </div>
-
-    </form>
+    </div>
 
   </div>
 

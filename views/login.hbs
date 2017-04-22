@@ -1,31 +1,45 @@
-<div class="container">
+<div class="row">
 
-  <div class="row">
+  <div class="col-md-8 col-md-offset-2">
 
-    {{#if error}}
-    <div class="alert alert-danger" role="alert">
-      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-      <span class="sr-only">Error:</span>
-      {{error}}
-    </div>
-    {{/if}}
+    <div class="panel panel-default">
+      <div class="panel-heading">Login</div>
+      <div class="panel-body">
 
-    <div class="inner">
-      <form method="post" style="max-width: 300px; margin: auto; border: 0.5px solid gray; padding: 30px 30px 30px 30px">
-        <div class="form-group frontaction">
-          <label>Username</label>
-          <input type="text" class="form-control" name="username" placeholder="Username" value="{{contact.name}}">
+        {{#if error}}
+        <div class="alert alert-danger" role="alert">
+          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+          <span class="sr-only">Error:</span>
+          {{error}}
         </div>
-        <div class="form-group frontaction">
-          <label>Password</label>
-          <input type="password" class="form-control" name="password" placeholder="Password" value="{{contact.phone}}">
+        {{/if}}
+
+        <div class="inner">
+          <form class="form-horizontal" method="post">
+            <div class="col-md-10 col-md-offset-1">
+              <div class="form-group">
+                <label>Username</label>
+                <input type="text" class="form-control" name="username" placeholder="Username" value="{{contact.name}}">
+              </div>
+            </div>
+            <div class="col-md-10 col-md-offset-1">
+              <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" name="password" placeholder="Password" value="{{contact.phone}}">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-10 col-md-offset-1" style="text-align:center">
+                <button type="submit" class="btn btn-primary">Login</button>
+                <a class="btn btn-primary" href='/auth/facebook'>Login with Facebook</a>
+                <a class="btn btn-primary" href='/signup'>Register Here</a>
+              </div>
+            </div>
+          </form>
         </div>
-        <div class="form-group">
-          <button type="submit" class="btn btn-primary col-xs-12">Login</button>
-          <a class="btn btn-primary col-xs-12" href='/auth/facebook'>Login with Facebook</a>
-          <a class="btn btn-primary col-xs-12" href='/signup'>Register Here</a>
-        </div>
-      </form>
+
+      </div>
 
     </div>
 
