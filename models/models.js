@@ -1,8 +1,9 @@
 var mongoose = require('mongoose');
+// var findOrCreate = require('mongoose-findorcreate');
 
 // Create a connect.js inside the models/ directory that
 // exports your MongoDB URI!
-var connect = require('./connect') || process.env.MONGODB_URI;
+var connect = process.env.MONGODB_URI || require('./connect');
 
 // If you're getting an error here, it's probably because
 // your connect string is not defined or incorrect.
@@ -18,11 +19,16 @@ var ContactSchema = new mongoose.Schema({
 });
 
 var UserSchema = new mongoose.Schema({
-  username: String,
+  username: {
+    type: String,
+    required: true,
+    unique: true
+  },
   password: String,
   phone: String,
   facebookId: String
 });
+// UserSchema.plugin(findOrCreate);
 
 var MessageSchema = new mongoose.Schema({
   created: Date,
@@ -37,8 +43,8 @@ var MessageSchema = new mongoose.Schema({
 
 UserSchema.statics.findOrCreate = function findOrCreate(profile, cb){
     var user = new this();
-    this.findOne({facebookId : profile.id},function(err, result){
-        if(! result) {
+    this.findOne({facebookId: profile.id},function(err, result){
+        if(!result) {
             user.username = profile.displayName;
             user.facebookId = profile.id;
             user.save(cb);

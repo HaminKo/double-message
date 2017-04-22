@@ -1,19 +1,23 @@
-<div class="container-fluid">
-  <div class="row col-md-8 col-md-offset-2 col-sm-9 col-sm-offset-1.5 col-xs-10 col-xs-offset-1">
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 col-sm-9 col-sm-offset-1.5 col-xs-10 col-xs-offset-1">
 
     <h2>Your conversation with {{contact.name}}</h2>
 
     <div class="col-xs-12">
       {{#each message}}
         {{#if from}}
-          <div class="receiveMessage col-xs-8">
-            <p class="messageInfo">Sent from {{../contact.name}} via {{channel}}: {{timeCompare}}</p>
-            <p class="messageContent">{{content}}</p>
+          <div class="col-xs-8">
+            <div class="receiveMessage col-xs-12">
+              <p class="messageInfo">Sent from {{../contact.name}} via {{channel}}: {{timeCompare}}</p>
+              <p class="messageContent">{{content}}</p>
+            </div>
           </div>
         {{else}}
-          <div class="sendMessage col-xs-8 col-xs-offset-4">
-            <p class="messageInfo">Sent to {{../contact.name}} via {{channel}}: {{timeCompare}}</p>
-            <p class="messageContent">{{content}}</p>
+          <div class="col-xs-8 col-xs-offset-4">
+            <div class="sendMessage col-xs-12">
+              <p class="messageInfo">Sent to {{../contact.name}} via {{channel}}: {{timeCompare}}</p>
+              <p class="messageContent">{{content}}</p>
+            </div>
           </div>
         {{/if}}
       {{/each}}
@@ -21,13 +25,15 @@
 
     <hr>
 
-    <h2>Messages to send!</h2>
+    <h2>Schedule Message</h2>
 
     <div class="col-xs-12">
       {{#each messageScheduled}}
-      <div class="sendMessage col-xs-8 col-xs-offset-2">
-        <p class="messageInfo">Sending to {{../contact.name}} via {{channel}} on {{timeToSend}}</p>
-        <p class="messageContent">{{content}}</p>
+      <div class="col-xs-8 col-xs-offset-2">
+        <div class="sendMessage col-xs-12">
+          <p class="messageInfo">Sending to {{../contact.name}} via {{channel}} on {{timeToSend}}</p>
+          <p class="messageContent">{{content}}</p>
+        </div>
       </div>
       {{/each}}
     </div>

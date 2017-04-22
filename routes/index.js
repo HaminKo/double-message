@@ -130,7 +130,7 @@ router.use(function(req, res, next) {
 });
 
 router.get('/contacts', function(req, res, next) {
-  Contact.find(function(err, contact) {
+  Contact.find({owner: req.user._id}, function(err, contact) {
     if (err) {
       res.status(500).json({err})
     } else {

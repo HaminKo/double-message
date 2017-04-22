@@ -20,25 +20,41 @@
             <div class="col-md-10 col-md-offset-1">
               <div class="form-group">
                 <label>Username</label>
-                <input type="text" class="form-control" name="signupUsername" placeholder="Username" value="{{contact.name}}">
+                {{#if usernameInput}}
+                  <input type="text" class="form-control" name="signupUsername" placeholder="{{usernameInput}}" value="{{usernameInput}}">
+                {{else}}
+                  <input type="text" class="form-control" name="signupUsername" placeholder="Username" value="{{contact.name}}">
+                {{/if}}
               </div>
             </div>
             <div class="col-md-10 col-md-offset-1">
               <div class="form-group">
                 <label>Phone Number</label>
-                <input type="text" class="form-control" name="signupPhone" placeholder="Phone Number" value="{{contact.name}}">
+                {{#if phoneInput}}
+                  <input type="text" class="form-control" name="signupPhone" placeholder="Phone Number" value="{{phoneInput}}">
+                {{else}}
+                  <input type="text" class="form-control" name="signupPhone" placeholder="Phone Number" value="{{contact.phone}}">
+                {{/if}}
               </div>
             </div>
             <div class="col-md-10 col-md-offset-1">
               <div class="form-group">
                 <label>Password</label>
-                <input type="password" class="form-control" name="signupPassword" placeholder="Password" value="{{contact.phone}}">
+                {{#if passwordInput}}
+                  <input type="password" class="form-control" name="signupPassword" placeholder="Password" value="{{passwordInput}}">
+                {{else}}
+                  <input type="password" class="form-control" name="signupPassword" placeholder="Password" value="{{contact.password}}">
+                {{/if}}
               </div>
             </div>
             <div class="col-md-10 col-md-offset-1">
               <div class="form-group">
                 <label>Confirm Password</label>
-                <input type="password" class="form-control" name="signupPasswordConfirm" placeholder="Confirm password" value="{{contact.phone}}">
+                {{#if passwordConfirmInput}}
+                  <input type="password" class="form-control" name="signupPasswordConfirm" placeholder="Confirm password" value="{{passwordConfirmInput}}">
+                {{else}}
+                  <input type="password" class="form-control" name="signupPasswordConfirm" placeholder="Confirm password" value="{{contact.passwordConfirm}}">
+                {{/if}}
               </div>
             </div>
 
