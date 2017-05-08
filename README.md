@@ -1,3 +1,5 @@
+# WARNING: This project currently does not work.
+
 # double-message
 Personal relationship manager app allowing shared inbox for texting and emailing. Includes a delayed message feature.
 
